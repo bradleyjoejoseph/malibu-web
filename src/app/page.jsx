@@ -1,148 +1,180 @@
 import { getAllTopics } from "@/lib/topics";
-import { Terminal, Download, ArrowRight, BookOpen, Cpu, Sparkles } from "lucide-react";
+import TerminalCard from "@/components/TerminalCard";
+import Link from "next/link";
+import { Sparkles, ArrowRight, ArrowUpRight, Cpu, Layers, Zap } from "lucide-react";
 
 export default function HomePage() {
   const topics = getAllTopics();
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-12 md:py-20">
+    <div className="mx-auto max-w-4xl px-6 py-16 sm:py-24">
       {/* Hero Section */}
-      <section className="mb-20">
-        <div className="inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-400 mb-6">
-          <Sparkles className="h-3.5 w-3.5" />
+      <section className="mb-24 sm:mb-32">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.04] px-3.5 py-1 text-xs font-medium text-neutral-300 mb-8 backdrop-blur-md">
+          <Sparkles className="h-3.5 w-3.5 text-apple-blue" />
           <span>Independent AI Research Initiative</span>
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-8 leading-[1.08]">
           Building an Autoregressive Transformer{" "}
-          <span className="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-neutral-200 to-neutral-500">
             From First Principles.
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-6 font-normal">
-          <strong>Malibu</strong> is a ground-up engineering deep dive into the complete architecture of modern Large Language Models. 
-          No wrapper frameworks, no LangChain, and zero third-party API dependencies—just raw PyTorch tensors, custom causal self-attention math, and an open research log.
+        <p className="text-lg sm:text-xl text-neutral-400 leading-relaxed font-normal max-w-2xl mb-10">
+          <strong className="text-white font-medium">Malibu</strong> is a ground-up engineering deep dive into the 
+          mathematical foundations and systems architecture of modern Large Language Models. 
+          Zero wrapper frameworks, zero LangChain, and zero third-party API dependencies—just raw PyTorch tensors, custom causal self-attention math, and an open research log.
         </p>
 
-        <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400 border-l-2 border-sky-500 pl-4 py-1">
-          <span>By <strong>Bradley Joe (Joseph)</strong></span>
-          <span>•</span>
-          <span>Second-Year MEng Computer Science with AI @ University of York</span>
-          <span>•</span>
-          <span>Open-Source Research</span>
+        {/* Action Buttons */}
+        <div className="flex flex-wrap items-center gap-4 mb-12">
+          <a
+            href="#topics"
+            className="px-6 py-3 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-all duration-200 flex items-center gap-2 shadow-sm"
+          >
+            Explore Research Topics <ArrowRight className="h-4 w-4" />
+          </a>
+          <a
+            href="https://github.com/bradleyjoejoseph/malibu"
+            target="_blank"
+            rel="noreferrer"
+            className="px-6 py-3 rounded-full border border-white/[0.15] bg-white/[0.05] hover:bg-white/[0.1] hover:border-white/30 text-white font-medium text-sm transition-all duration-200 flex items-center gap-2 backdrop-blur-md"
+          >
+            GitHub Repository <ArrowUpRight className="h-4 w-4 opacity-70" />
+          </a>
         </div>
-      </section>
 
-      {/* Download & Test Section */}
-      <section id="download" className="mb-24 scroll-mt-24">
-        <div className="rounded-xl border border-slate-800 bg-[#0d1117] p-6 md:p-8 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 h-40 w-40 bg-sky-500/10 blur-3xl rounded-full pointer-events-none" />
-
-          <div className="flex items-center gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400">
-              <Download className="h-5 w-5" />
+        {/* Author / Academic Credentials Card */}
+        <div className="glass-panel rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-neutral-400">
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-apple-blue to-purple-500 flex items-center justify-center text-white font-bold text-xs shadow-sm">
+              BJ
             </div>
             <div>
-              <h2 className="text-xl font-bold text-white">Download & Test Malibu</h2>
-              <p className="text-xs text-slate-400">Clone the repository and inspect the codebase locally.</p>
+              <div className="font-semibold text-white">Bradley Joe (Joseph)</div>
+              <div className="text-neutral-400 text-[11px]">
+                MEng Computer Science with AI · University of York
+              </div>
             </div>
           </div>
-
-          <p className="text-sm text-slate-300 mb-5 leading-relaxed">
-            Malibu is engineered to run locally on consumer hardware. Training and inference leverage native 
-            Apple Silicon <strong>MPS (Metal Performance Shaders)</strong> GPU acceleration with zero cloud bills.
-          </p>
-
-          <div className="rounded-lg border border-slate-800 bg-black/60 p-4 font-mono text-xs text-slate-200">
-            <div className="flex items-center justify-between text-slate-500 pb-2 mb-2 border-b border-slate-800/80">
-              <span className="flex items-center gap-1.5">
-                <Terminal className="h-3.5 w-3.5" /> Terminal
-              </span>
-              <span>bash</span>
-            </div>
-            <div className="space-y-1">
-              <p><span className="text-slate-500"># 1. Clone the public research repository</span></p>
-              <p className="text-sky-300">git clone https://github.com/bradleyjoejoseph/malibu.git</p>
-              <p className="text-sky-300">cd malibu</p>
-              <p className="pt-2"><span className="text-slate-500"># 2. Inspect the roadmap and tokenization tests</span></p>
-              <p className="text-emerald-400">pytest -v tests/</p>
-            </div>
-          </div>
-
-          <div className="mt-5 flex items-center justify-between text-xs text-slate-400">
-            <span className="flex items-center gap-1.5">
-              <Cpu className="h-3.5 w-3.5 text-sky-400" /> Target: MPS (Apple M-Series) / CUDA / CPU
-            </span>
-            <a
-              href="https://github.com/bradleyjoejoseph/malibu"
-              target="_blank"
-              rel="noreferrer"
-              className="text-sky-400 hover:text-sky-300 font-medium flex items-center gap-1"
-            >
-              View on GitHub →
-            </a>
+          <div className="flex items-center gap-2 text-[11px] text-neutral-400 border-t sm:border-t-0 border-white/[0.08] pt-2 sm:pt-0">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span>Active Research & Development</span>
           </div>
         </div>
       </section>
 
-      {/* Topic Archive & Devlogs */}
+      {/* Download & Run Section */}
+      <section id="download" className="mb-28 sm:mb-36 scroll-mt-24">
+        <div className="mb-8">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-2">
+            Download & Run Locally
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-400 max-w-xl">
+            Inspect the codebase, run unit tests, and verify tensor shapes directly on your own machine.
+          </p>
+        </div>
+
+        {/* Interactive macOS Terminal */}
+        <div className="mb-8">
+          <TerminalCard />
+        </div>
+
+        {/* Architecture Spec Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="glass-panel rounded-2xl p-5">
+            <div className="h-8 w-8 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-apple-blue mb-3">
+              <Layers className="h-4 w-4" />
+            </div>
+            <div className="font-semibold text-white text-sm mb-1">Architecture</div>
+            <div className="text-xs text-neutral-400 leading-relaxed">
+              Causal decoder-only Transformer with rotary position embeddings (RoPE) and RMSNorm.
+            </div>
+          </div>
+
+          <div className="glass-panel rounded-2xl p-5">
+            <div className="h-8 w-8 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-apple-blue mb-3">
+              <Cpu className="h-4 w-4" />
+            </div>
+            <div className="font-semibold text-white text-sm mb-1">Acceleration</div>
+            <div className="text-xs text-neutral-400 leading-relaxed">
+              Targeted for Apple Silicon MPS (Metal Performance Shaders) GPU & CUDA with zero cloud cost.
+            </div>
+          </div>
+
+          <div className="glass-panel rounded-2xl p-5">
+            <div className="h-8 w-8 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-apple-blue mb-3">
+              <Zap className="h-4 w-4" />
+            </div>
+            <div className="font-semibold text-white text-sm mb-1">Zero Bloat</div>
+            <div className="text-xs text-neutral-400 leading-relaxed">
+              Written purely in PyTorch and NumPy. No HuggingFace wrappers or high-level abstractions.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Topic Archive & Vlogs */}
       <section id="topics" className="scroll-mt-24">
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-800">
+        <div className="flex items-end justify-between mb-10 pb-4 border-b border-white/[0.08]">
           <div>
-            <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-              <BookOpen className="h-5 w-5 text-sky-400" /> Research Topics & Vlogs
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-2">
+              Research Topics & Vlogs
             </h2>
-            <p className="text-sm text-slate-400 mt-1">
-              My unfiltered notes, mathematical breakdowns, and weekly insights as I build Malibu brick by brick.
+            <p className="text-sm sm:text-base text-neutral-400">
+              Unfiltered engineering notes, mathematical derivations, and weekly insights as Malibu is built brick by brick.
             </p>
           </div>
-          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">
-            {topics.length} {topics.length === 1 ? "Entry" : "Entries"}
-          </span>
+          <div className="hidden sm:inline-flex px-3 py-1 rounded-full border border-white/[0.08] bg-white/[0.03] text-xs font-medium text-neutral-400">
+            {topics.length} {topics.length === 1 ? "Article" : "Articles"}
+          </div>
         </div>
 
         {topics.length === 0 ? (
-          <p className="text-slate-500 text-sm">No research topics published yet. First entry dropping soon!</p>
+          <div className="glass-panel rounded-2xl p-12 text-center text-neutral-500 text-sm">
+            No research topics published yet.
+          </div>
         ) : (
           <div className="space-y-4">
             {topics.map((topic) => (
-              <a
+              <Link
                 key={topic.slug}
                 href={`/topics/${topic.slug}`}
-                className="group block rounded-xl border border-slate-800/80 bg-slate-900/40 p-6 transition-all hover:border-sky-500/40 hover:bg-slate-900/80"
+                className="glass-panel glass-panel-hover rounded-2xl p-6 sm:p-7 block group"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                  <h3 className="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-white tracking-tight group-hover:text-apple-blue transition-colors duration-200">
                     {topic.title}
                   </h3>
-                  <div className="flex items-center gap-2 text-xs text-slate-500 shrink-0">
+                  <div className="flex items-center gap-2 text-xs text-neutral-500 shrink-0 font-medium">
                     <span>{topic.date}</span>
-                    <span>•</span>
+                    <span>·</span>
                     <span>{topic.readTime}</span>
                   </div>
                 </div>
 
-                <p className="text-sm text-slate-400 mb-4 line-clamp-2 leading-relaxed">
+                <p className="text-sm text-neutral-400 mb-5 leading-relaxed line-clamp-2 font-normal">
                   {topic.summary}
                 </p>
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between pt-1">
                   <div className="flex flex-wrap gap-1.5">
                     {topic.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md bg-slate-800/80 px-2 py-0.5 text-[11px] font-medium text-slate-400"
+                        className="rounded-full bg-white/[0.04] border border-white/[0.06] px-2.5 py-0.5 text-[11px] font-medium text-neutral-400"
                       >
-                        #{tag}
+                        {tag}
                       </span>
                     ))}
                   </div>
-                  <span className="text-xs font-medium text-sky-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Read topic <ArrowRight className="h-3 w-3" />
+                  <span className="text-xs font-semibold text-apple-blue flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200">
+                    Read article <ArrowRight className="h-3 w-3" />
                   </span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         )}
