@@ -11,7 +11,7 @@ export function getAllTopics() {
   }
   const fileNames = fs.readdirSync(topicsDirectory);
   const allTopics = fileNames
-    .filter((fileName) => fileName.endsWith(".md"))
+    .filter((fileName) => fileName.endsWith(".md") && !fileName.startsWith("."))
     .map((fileName) => {
       const slug = fileName.replace(/\.md$/, "");
       const fullPath = path.join(topicsDirectory, fileName);
