@@ -23,14 +23,9 @@ export default function RootLayout({ children }) {
           <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-3.5">
             <Link href="/" className="flex items-center gap-2.5 group">
               <MalibuLogo className="h-7 w-7" />
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-semibold tracking-tight text-[#1d1d1f] dark:text-white group-hover:opacity-80 transition-opacity">
-                  Malibu
-                </span>
-                <span className="hidden sm:inline-flex rounded-full border border-black/[0.08] dark:border-white/[0.1] bg-black/[0.03] dark:bg-white/[0.04] px-2 py-0.5 text-[10px] font-medium tracking-wide text-neutral-500 dark:text-neutral-400">
-                  Research
-                </span>
-              </div>
+              <span className="text-sm font-semibold tracking-tight text-[#1d1d1f] dark:text-white group-hover:opacity-80 transition-opacity">
+                Malibu
+              </span>
             </Link>
 
             <nav className="flex items-center gap-5 sm:gap-6 text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400">
