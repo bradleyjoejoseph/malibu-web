@@ -22,8 +22,8 @@ export default function RootLayout({ children }) {
         <header className="sticky top-0 z-50 glass-nav">
           <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-3.5">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <MalibuLogo className="h-7 w-7" />
-              <span className="text-base sm:text-lg font-semibold tracking-tight text-[#1d1d1f] dark:text-white group-hover:opacity-80 transition-opacity">
+              <MalibuLogo className="h-8 w-8" />
+              <span className="text-xl sm:text-2xl font-bold tracking-tight text-[#1d1d1f] dark:text-white group-hover:opacity-80 transition-opacity">
                 Malibu
               </span>
             </Link>
