@@ -1,4 +1,5 @@
 import { getTopicBySlug } from "@/lib/topics";
+import MalibuLogo from "@/components/MalibuLogo";
 import { ArrowLeft, Calendar, Clock, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -82,13 +83,16 @@ export default async function TopicPage({ params }) {
       {/* Bottom Editorial Card */}
       <div className="mt-20 pt-10 border-t border-black/[0.08] dark:border-white/[0.08]">
         <div className="rounded-2xl border border-black/[0.08] dark:border-white/[0.08] bg-white dark:bg-[#161617] p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-sm">
-          <div className="space-y-1">
-            <div className="font-semibold text-[#1d1d1f] dark:text-white text-sm">
-              Follow the Malibu Research Project
+          <div className="flex items-start gap-3">
+            <MalibuLogo className="h-8 w-8 mt-0.5" />
+            <div className="space-y-1">
+              <div className="font-semibold text-[#1d1d1f] dark:text-white text-sm">
+                Follow the Malibu Research Project
+              </div>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 max-w-md leading-relaxed">
+                Mathematical notes, tokenizer experiments, and model weights are documented openly in the GitHub repository.
+              </p>
             </div>
-            <p className="text-xs text-neutral-500 dark:text-neutral-400 max-w-md leading-relaxed">
-              Mathematical notes, tokenizer experiments, and model weights are documented openly in the GitHub repository.
-            </p>
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <Link

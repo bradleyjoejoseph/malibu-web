@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Apple Squircle Chassis -->
+  <rect x="2" y="2" width="96" height="96" rx="24" fill="#000000" />
+  
+  <!-- M13 Futuristic Monogram -->
+  <!-- The '1' / Left Pillar of 'M' -->
+  <path d="M 18 42 L 36 24 L 36 80 L 24 80 L 24 54 L 18 60 Z" fill="#FFFFFF" />
+
+  <!-- The Central Stencil Diagonal ('M' Chevron) -->
+  <path d="M 40 32 L 52 20 L 64 32 L 52 44 Z" fill="#FFFFFF" />
+
+  <!-- The '3' / Right Wing of 'M' -->
+  <path d="M 58 24 L 78 24 L 78 46 L 66 54 L 78 62 L 78 80 L 52 80 L 40 68 L 50 58 L 66 58 L 66 54 L 54 50 L 66 46 L 66 34 L 54 34 Z" fill="#FFFFFF" />
+</svg>

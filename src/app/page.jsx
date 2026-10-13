@@ -1,5 +1,6 @@
 import { getAllTopics } from "@/lib/topics";
 import TerminalCard from "@/components/TerminalCard";
+import MalibuLogo from "@/components/MalibuLogo";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
@@ -11,8 +12,8 @@ export default function HomePage() {
       {/* Editorial Header / Hero */}
       <section className="mb-20 sm:mb-28">
         {/* Subtle Author & Affiliation Capsule */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-black/[0.08] dark:border-white/[0.1] bg-black/[0.03] dark:bg-white/[0.04] px-3 py-1 text-xs font-medium text-neutral-600 dark:text-neutral-400 mb-6">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+        <div className="inline-flex items-center gap-2.5 rounded-full border border-black/[0.08] dark:border-white/[0.1] bg-black/[0.03] dark:bg-white/[0.04] px-3.5 py-1 text-xs font-medium text-neutral-600 dark:text-neutral-400 mb-6">
+          <MalibuLogo className="h-4 w-4" withBorder={false} />
           <span>Bradley Joe (Joseph) · University of York MEng AI</span>
         </div>
 

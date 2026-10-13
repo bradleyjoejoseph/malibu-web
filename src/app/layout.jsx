@@ -3,11 +3,14 @@ import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import { ArrowUpRight } from "lucide-react";
 
+import MalibuLogo from "@/components/MalibuLogo";
+
 export const metadata = {
   title: "Malibu — Causal Transformer Research & Engineering Logs",
   description: "An open research journey building a causal Transformer language model from first principles by Bradley Joe (Joseph).",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.svg",
+    apple: "/logo.png",
   },
 };
 
@@ -19,9 +22,7 @@ export default function RootLayout({ children }) {
         <header className="sticky top-0 z-50 glass-nav">
           <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-3.5">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#1d1d1f] dark:bg-white text-white dark:text-black font-semibold text-xs tracking-tight shadow-sm transition-transform duration-200 group-hover:scale-105">
-                M
-              </div>
+              <MalibuLogo className="h-7 w-7" />
               <div className="flex items-center gap-2">
                 <span className="text-sm font-semibold tracking-tight text-[#1d1d1f] dark:text-white group-hover:opacity-80 transition-opacity">
                   Malibu
@@ -59,9 +60,12 @@ export default function RootLayout({ children }) {
         <footer className="relative z-10 mt-32 border-t border-black/[0.08] dark:border-white/[0.08] bg-black/[0.015] dark:bg-black/40 py-12 text-xs text-neutral-500 dark:text-neutral-400">
           <div className="mx-auto max-w-4xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-center sm:text-left space-y-1">
-              <p className="font-semibold text-[#1d1d1f] dark:text-white">
-                Malibu — Causal Transformer Research Initiative
-              </p>
+              <div className="flex items-center justify-center sm:justify-start gap-2">
+                <MalibuLogo className="h-5 w-5" />
+                <p className="font-semibold text-[#1d1d1f] dark:text-white">
+                  Malibu — Causal Transformer Research Initiative
+                </p>
+              </div>
               <p>
                 Engineered from first principles by Bradley Joe (Joseph) · University of York
               </p>
