@@ -1,6 +1,5 @@
 import { getAllTopics } from "@/lib/topics";
 import TerminalCard from "@/components/TerminalCard";
-import MalibuLogo from "@/components/MalibuLogo";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
@@ -11,21 +10,10 @@ export default function HomePage() {
     <div className="mx-auto max-w-4xl px-6 py-12 sm:py-20">
       {/* Editorial Header / Hero */}
       <section className="mb-20 sm:mb-28">
-        {/* Subtle Author & Affiliation Capsule */}
-        <div className="inline-flex items-center gap-2.5 rounded-full border border-black/[0.08] dark:border-white/[0.1] bg-black/[0.03] dark:bg-white/[0.04] px-3.5 py-1 text-xs font-medium text-neutral-600 dark:text-neutral-400 mb-6">
-          <MalibuLogo className="h-4 w-4" withBorder={false} />
-          <span>Bradley Joe (Joseph) · University of York MEng AI</span>
-        </div>
-
-        {/* Headline: Clean, commanding Apple typography (no marketing buzzwords) */}
-        <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#1d1d1f] dark:text-[#f5f5f7] mb-6 leading-[1.1]">
+        {/* Headline: Clean, commanding Apple typography */}
+        <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#1d1d1f] dark:text-[#f5f5f7] mb-8 leading-[1.1]">
           Building a Transformer from first principles.
         </h1>
-
-        {/* Subtext: <20 words, strictly disciplined per taste-skill */}
-        <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal max-w-2xl mb-8">
-          Raw PyTorch tensors, causal self-attention mathematics, and an open research journal. Zero wrapper frameworks.
-        </p>
 
         {/* Primary Action Buttons */}
         <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-12">
